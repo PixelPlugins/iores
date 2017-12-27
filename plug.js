@@ -12,6 +12,7 @@
 		console.log(url);
 		$.ajax({
 			url: url,
+			dataType: 'text',
 			success: function(data){
 				callback(data);
 			}
