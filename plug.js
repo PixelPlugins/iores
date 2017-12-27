@@ -9,11 +9,13 @@
     };
 	
 	ext.httpreq = function(url){
+		console.log(url);
 		var retval = 'Err';
 		xhr = new XMLHttpRequestRequest();
 		xhr.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200){
 				retval = this.responseText;
+				console.log(this.responseText);
 			}
 		}
 		xhr.open('GET', url, false);
