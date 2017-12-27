@@ -8,21 +8,14 @@
         return {status: 2, msg: 'Ready'};
     };
 	
-	ext.httpreq = function(url, callback){
-		console.log(url);
-		$.ajax({
-			url: url,
-			dataType: 'text',
-			success: function(data){
-				callback(data);
-			}
-		});
+	ext.redirect = function(url){
+		window.location = url;
 	}
 	
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-			['R', 'Send HTTP Request to %s', 'httpreq', 'http://www.google.com']
+			[' ', 'Redirect to %s', 'redirect', 'http://www.google.com']
         ]
     };
 
