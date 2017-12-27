@@ -12,13 +12,18 @@
 		window.location = url;
 	}
 	
+	ext.install = function(url, name){
+		window.location = 'http://localhost:9111/install~'+url+'~'+name;
+	}
+	
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-			[' ', 'Redirect to %s', 'redirect', 'http://www.google.com']
+			[' ', 'Redirect to %s', 'redirect', 'http://www.google.com'],
+			[' ', 'Install app - Zip file URL: %s , Program name: %s', 'install']
         ]
     };
 
     // Register the extension
-    ScratchExtensions.register('Sample extension', descriptor, ext);
+    ScratchExtensions.register('Plexicraft API', descriptor, ext);
 })({});
