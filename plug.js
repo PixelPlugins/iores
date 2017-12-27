@@ -10,15 +10,12 @@
 	
 	ext.httpreq = function(url, callback){
 		console.log(url);
-		xhr = new XMLHttpRequestRequest();
-		xhr.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200){
-				console.log(this.responseText);
-				callback(this.responseText);
+		$.ajax({
+			url: url,
+			success: function(data){
+				callback(data);
 			}
-		}
-		xhr.open('GET', url, false);
-		xhr.send();
+		});
 	}
 	
     // Block and block menu descriptions
